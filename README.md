@@ -1,14 +1,12 @@
-atvHelloWorld - An Xcode 4 sample project offering 1-click build and deploy and working code for the AppleTV2.  Presented at 360iDev Denver 2011
+eyetv4atv2 - An EyeTV integration for the Apple TV 2
 =====================================
 
 Contributors
 ------------
 
-atvHelloWorld was written by [Michael Gile](http://mgile.com) ([@mgile](http://twitter.com/mgile)).
+The project was based on atvHelloWorld written by [Michael Gile](http://mgile.com) ([@mgile](http://twitter.com/mgile)).
 
-Actively seeking contributors!  If you are interested in helping out, please contact [Michael Gile](http://mgile.com) ([@mgile](http://twitter.com/mgile)).
-
-License
+atvHelloWorld License
 -------
    The MIT License
 
