@@ -1,29 +1,27 @@
 //
-//  SampleVideoAsset.m
-//  atvHelloWorld
+//  EyeTvVideoAsset.m
+//  viaplay
 //
-//  Created by Michael Gile on 9/12/11.
-//  Copyright 2011 Wayin Inc. All rights reserved.
+//  Created by Mads Tandrup on 28/01/12.
+//  Copyright 2012 Wayin Inc. All rights reserved.
 //
 
-#import "SampleVideoAsset.h"
+#import "EyeTvVideoAsset.h"
 #import "BRURLImageProxy.h"
 #import "BRMediaType.h"
 #import "BRImageLoader.h"
 
-@implementation SampleVideoAsset
+@implementation EyeTvVideoAsset
 
-- (id)init
+- (id)initWithURLString:(NSString *)link
 {
-    self = [super init];
-    if (self) {
-        // Initialization code here.
-    }
-    
+    [super init];
+    url = [link retain];
     return self;
 }
 
 - (void) dealloc {
+    [url release];
 	[super dealloc];
 }
 
@@ -43,23 +41,23 @@
 }
 
 - (id)assetID {
-	return @"1234";
+	return url;
 };
 
 - (id)titleForSorting {
-	return @"360iDev Sample Video";
+	return [self title];
 };
 
 -(id)title {
-	return @"360iDev Sample Video";
+	return @"title";
 }
 
 - (id)artist {
-	return @"Sony Pictures";
+	return @"artist";
 };
 
 - (id)artistForSorting {
-	return @"Sony Pictures";
+	return [self artist];
 };
 
 - (id)AlbumName {
@@ -135,10 +133,8 @@
 };
 
 - (id)previewURL {
-	NSLog(@"%s (%d)", __PRETTY_FUNCTION__, __LINE__);
 	[super previewURL];
-	NSString* moviePosterPath = [[NSBundle bundleForClass:[SampleVideoAsset class]] pathForResource:@"spiderman-poster" ofType:@"png"];
-	return [NSURL fileURLWithPath:moviePosterPath];
+    return nil;
 };
 - (id)trickPlayURL {
 	NSLog(@"%s (%d)", __PRETTY_FUNCTION__, __LINE__);
@@ -146,16 +142,12 @@
 };
 - (id)imageProxy {
 	NSLog(@"%s (%d)", __PRETTY_FUNCTION__, __LINE__);
-	return nil;
-	//NSString* moviePosterPath = [[NSBundle bundleForClass:[SampleVideoAsset class]] pathForResource:@"spiderman-poster" ofType:@"png"];
-	//return [BRURLImageProxy proxyWithURL:[[NSURL fileURLWithPath:moviePosterPath] absoluteString]];
+	return [BRURLImageProxy proxyWithURL:[self previewURL]];
 };
 
 - (id)imageProxyWithBookMarkTimeInMS:(unsigned int)fp8 {	
 	NSLog(@"%s (%d)", __PRETTY_FUNCTION__, __LINE__);
 	return nil;
-	//NSString* moviePosterPath = [[NSBundle bundleForClass:[SampleVideoAsset class]] pathForResource:@"spiderman-poster" ofType:@"png"];
-	//return [BRURLImageProxy proxyWithURL:[[NSURL fileURLWithPath:moviePosterPath] absoluteString]];
 };
 - (BOOL)hasCoverArt {
 	return YES;
@@ -179,7 +171,7 @@
 	return nil;
 };
 - (id)primaryCollectionTitle {
-	return @"The Amazing Spider-Man";
+	return @"displaytitle";
 };
 - (id)primaryCollectionTitleForSorting {
 	return nil;
@@ -331,7 +323,7 @@
 	return nil;
 };
 - (id)mediaDescription {
-	return nil;
+	return @"longDescription";
 };
 - (id)mediaSummary {
 	return nil;
@@ -360,14 +352,12 @@
 
 - (id)mediaType {
 	NSLog(@"%s (%d)", __PRETTY_FUNCTION__, __LINE__);
-	return [BRMediaType movieTrailer];
+	return [BRMediaType TVShow];
 };
 
 - (id)mediaURL {
 	NSLog(@"%s (%d)", __PRETTY_FUNCTION__, __LINE__);
-	NSString* moviePath = [[NSBundle bundleForClass:[SampleVideoAsset class]] pathForResource:@"spiderman" ofType:@"mov"];
-	NSLog(@"%s (%d) moviePath = %@", __PRETTY_FUNCTION__, __LINE__, moviePath);
-	return [[NSURL fileURLWithPath:moviePath] absoluteString];
+    return url;
 }
 
 #pragma mark BRImageProvider
