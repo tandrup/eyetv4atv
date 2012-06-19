@@ -11,9 +11,11 @@
 
 @class TopShelfController;
 
-@interface EyeTVAppliance : BRBaseAppliance {
+@interface EyeTVAppliance : BRBaseAppliance <NSNetServiceBrowserDelegate> {
 	TopShelfController*		_topShelfController;
 	NSArray*				_applianceCategories;
+    NSNetServiceBrowser*    _serviceBrowser;
+    NSMutableSet*           _services;
 }
 
 @property(nonatomic, readonly, retain) id topShelfController;

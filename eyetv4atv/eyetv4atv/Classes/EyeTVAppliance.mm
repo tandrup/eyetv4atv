@@ -36,21 +36,39 @@
 - (id)init {
     self = [super init];
     if (self) {
+        _services               = [[NSMutableSet set] retain];
+        _serviceBrowser         = [[NSNetServiceBrowser alloc] init];
+        [_serviceBrowser setDelegate:self];
+        [_serviceBrowser searchForServicesOfType:@"_http._tcp" inDomain:@""];
 		_topShelfController		= [[TopShelfController alloc] init];
 		_applianceCategories	= [[EyeTVAppliance applianceCategories] retain];
+        
     }
     
     return self;
 }
 
 - (void) dealloc {
+    [_serviceBrowser release];
+    [_services release];
 	[_applianceCategories release];
 	[_topShelfController release];
 	[super dealloc];
 }
 
 - (id) applianceCategories {
-	return _applianceCategories;
+    NSMutableArray* categoryList = [[NSMutableArray alloc] initWithCapacity:[_services count]];
+	
+    int idx = 0;
+    for (NSNetService* service in _services) {
+        [categoryList addObject:[BRApplianceCategory categoryWithName:[[service name] substringFromIndex:6]
+                                                           identifier:service
+                                                       preferredOrder:idx++]];
+    }
+	
+	return [NSArray arrayWithArray:[categoryList autorelease]];
+
+	//return _applianceCategories;
 }
 
 - (id) identifierForContentAlias:(id)contentAlias {
@@ -76,7 +94,9 @@
 {
 	id controller	= nil;
 	
-    controller = [[[EyeTvMenu alloc] init] autorelease];
+    NSLog(@"Selected %@", [identifier addresses]);
+    NSLog(@"Selected %@", [identifier hostName]);
+    controller = [[[EyeTvMenu alloc] initWithService:identifier] autorelease];
 
 	return controller;
 }
@@ -95,6 +115,18 @@
 
 - (id) applianceKey { 
 	return APPLIANCE_KEY; 
+}
+
+- (void)netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didFindService:(NSNetService *)aNetService moreComing:(BOOL)moreComing {
+    NSLog(@"Found service: %@", [aNetService name]);
+    if ([[aNetService name] hasPrefix:@"EyeTV"]) {
+        [_services addObject:aNetService];
+    }
+    //[_applianceCategories addObject:[BRApplianceCategory categoryWithName:aNetService.name 
+	//												   identifier:aNetService.name 
+	//											   preferredOrder:0]];
+
+    
 }
 
 @end

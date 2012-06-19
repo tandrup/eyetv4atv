@@ -7,12 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JsonMenu.h"
+#import "BRMediaMenuController.h"
+#import <SBJson/SBJson.h>
 
-@interface EyeTvMenu : JsonMenu {
+@interface EyeTvMenu : BRMediaMenuController {
+    SBJsonStreamParser *parser;
+    SBJsonStreamParserAdapter *adapter;
     NSArray *_items;
 }
 
-- (id)init;
+- (id)initWithService:(NSNetService *)service;
 
 @end

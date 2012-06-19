@@ -23,7 +23,6 @@
 		29AFDC8B141FEFE400770D4B /* template.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 29AFDC87141FEE5600770D4B /* template.vsh */; };
 		5CA5B21215907B9300174E74 /* EyeTvMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B20D15907B9200174E74 /* EyeTvMenu.m */; };
 		5CA5B21315907B9300174E74 /* EyeTvVideoAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B20F15907B9200174E74 /* EyeTvVideoAsset.m */; };
-		5CA5B21415907B9300174E74 /* JsonMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B21115907B9300174E74 /* JsonMenu.m */; };
 		5CA5B238159095D300174E74 /* libsbjson-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA5B2271590953900174E74 /* libsbjson-ios.a */; };
 /* End PBXBuildFile section */
 
@@ -91,8 +90,6 @@
 		5CA5B20D15907B9200174E74 /* EyeTvMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EyeTvMenu.m; sourceTree = "<group>"; };
 		5CA5B20E15907B9200174E74 /* EyeTvVideoAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EyeTvVideoAsset.h; sourceTree = "<group>"; };
 		5CA5B20F15907B9200174E74 /* EyeTvVideoAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EyeTvVideoAsset.m; sourceTree = "<group>"; };
-		5CA5B21015907B9300174E74 /* JsonMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonMenu.h; sourceTree = "<group>"; };
-		5CA5B21115907B9300174E74 /* JsonMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonMenu.m; sourceTree = "<group>"; };
 		5CA5B21B1590953900174E74 /* SBJson.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SBJson.xcodeproj; path = ../sbjson/SBJson.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,8 +135,6 @@
 				5CA5B20D15907B9200174E74 /* EyeTvMenu.m */,
 				5CA5B20E15907B9200174E74 /* EyeTvVideoAsset.h */,
 				5CA5B20F15907B9200174E74 /* EyeTvVideoAsset.m */,
-				5CA5B21015907B9300174E74 /* JsonMenu.h */,
-				5CA5B21115907B9300174E74 /* JsonMenu.m */,
 				29536CAF141D7ADA0044B730 /* EyeTVAppliance.h */,
 				29536CB0141D7ADA0044B730 /* EyeTVAppliance.mm */,
 				29536CB1141D7ADA0044B730 /* BackRowExtras.h */,
@@ -333,7 +328,6 @@
 				29536CBB141D7ADA0044B730 /* TopShelfController.m in Sources */,
 				5CA5B21215907B9300174E74 /* EyeTvMenu.m in Sources */,
 				5CA5B21315907B9300174E74 /* EyeTvVideoAsset.m in Sources */,
-				5CA5B21415907B9300174E74 /* JsonMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
