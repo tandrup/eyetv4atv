@@ -10,9 +10,10 @@
 
 @interface EyeTvVideoAsset : BRBaseMediaAsset<BRMediaAsset> {
 @private
-    NSString *url;
+    NSString *baseUrl;
+    NSDictionary *item;
 }
 
-- (id)initWithURLString:(NSString*)url;
+- (id)initWithBaseURLString:(NSString*)url andData:(NSDictionary *)item;
 
 @end

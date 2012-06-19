@@ -61,7 +61,8 @@
 - (void)netServiceDidResolveAddress:(NSNetService *)aNetService {
     NSString* addr = [aNetService hostName];
     int port = 2170;
-    NSString* urlString = [NSString stringWithFormat:@"http://%@:%d/live/recordings/0/0/-1/-1/-date/_REC_WIFIACCESS", addr, port];
+    baseUrl = [[NSString stringWithFormat:@"http://%@:%d", addr, port] retain];
+    NSString* urlString = [NSString stringWithFormat:@"%@/live/recordings/0/0/-1/-1/-date/_REC_WIFIACCESS", baseUrl];
     NSLog(@"EyeTV URL: %@", urlString);
     
     NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]
@@ -71,25 +72,35 @@
     [[[NSURLConnection alloc] initWithRequest:theRequest delegate:self] autorelease];
 }
 
+-(void)netService:(NSNetService *)sender didNotResolve:(NSDictionary *)errorDict {
+    NSLog(@"ERROR: Unable to resolve address for %@. Error is %@", sender, errorDict);
+}
+
 -(void)dealloc {
     [_items release];
+    [baseUrl release];
+    [parser release];
+    [adapter release];
 	[super dealloc];
+}
+
+- (EyeTvVideoAsset*)assetFor:(long)itemIndex {
+    NSDictionary *itemObj = [_items objectAtIndex:itemIndex];
+    return [[[EyeTvVideoAsset alloc] initWithBaseURLString:baseUrl andData:itemObj] autorelease];
 }
 
 - (id)previewControlForItem:(long)item {
     NSLog(@"previewControlForItem: %ld", item);
-	NSDictionary *itemObj = [_items objectAtIndex:item];
-        BRImageAndSyncingPreviewController *controller = [[BRImageAndSyncingPreviewController alloc] init];
-        [controller setStatusMessage:[itemObj objectForKey:@"display title"]];
-        return controller;
+    EyeTvVideoAsset *asset = [self assetFor:item];
+    BRMediaPreviewControlFactory *factory = [BRMediaPreviewControlFactory factory];
+    factory.previewShouldShowMetadata = YES;
+    return [factory previewControlForAsset:asset];
+
 }
 
 - (void)itemSelected:(long)selected {	
-	NSDictionary *itemObj = [_items objectAtIndex:selected];
-    NSLog(@"%s (%d) item selected: %@", __PRETTY_FUNCTION__, __LINE__, itemObj);
-    NSString *url = [NSString stringWithFormat:@"http://192.168.1.2:2170/live/recordingFile/%@/refmovie.mov", [itemObj objectForKey:@"id"]];
-    NSLog(@"URL %@", url);
-    [[BRMediaPlayerManager singleton] presentMediaAsset:[[[EyeTvVideoAsset alloc] initWithURLString:url] autorelease] options:nil];
+    EyeTvVideoAsset *asset = [self assetFor:selected];
+    [[BRMediaPlayerManager singleton] presentMediaAsset:asset options:nil];
 }
 
 - (long)itemCount {
@@ -119,11 +130,11 @@
 #pragma mark SBJsonStreamParserAdapterDelegate methods
 
 - (void)parser:(SBJsonStreamParser *)parser foundArray:(NSArray *)array {
-	NSLog(@"Connection foundArray: %@", array);
+//	NSLog(@"Connection foundArray: %@", array);
 }
 
 - (void)parser:(SBJsonStreamParser *)parser foundObject:(NSDictionary *)dict {
-	NSLog(@"Connection foundObject: %@", dict);
+//	NSLog(@"Connection foundObject: %@", dict);
     id obj = [dict objectForKey:@"recordings"];
     
     if ([obj isKindOfClass:[NSArray class]]) {

@@ -13,15 +13,17 @@
 
 @implementation EyeTvVideoAsset
 
-- (id)initWithURLString:(NSString *)link
+- (id)initWithBaseURLString:(NSString *)link andData:(NSDictionary*)data
 {
     [super init];
-    url = [link retain];
+    baseUrl = [link retain];
+    item = [data retain];
     return self;
 }
 
 - (void) dealloc {
-    [url release];
+    [baseUrl release];
+    [item release];
 	[super dealloc];
 }
 
@@ -41,7 +43,7 @@
 }
 
 - (id)assetID {
-	return url;
+	return [item objectForKey:@"id"];
 };
 
 - (id)titleForSorting {
@@ -49,7 +51,7 @@
 };
 
 -(id)title {
-	return @"title";
+ 	return [[item objectForKey:@"info"] objectForKey:@"recording title"];
 }
 
 - (id)artist {
@@ -133,8 +135,7 @@
 };
 
 - (id)previewURL {
-	[super previewURL];
-    return nil;
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@/live/thumbnail/0/%@", baseUrl, [self assetID]]];
 };
 - (id)trickPlayURL {
 	NSLog(@"%s (%d)", __PRETTY_FUNCTION__, __LINE__);
@@ -323,7 +324,7 @@
 	return nil;
 };
 - (id)mediaDescription {
-	return @"longDescription";
+	return [[item objectForKey:@"info"] objectForKey:@"episode title"];
 };
 - (id)mediaSummary {
 	return nil;
@@ -357,7 +358,7 @@
 
 - (id)mediaURL {
 	NSLog(@"%s (%d)", __PRETTY_FUNCTION__, __LINE__);
-    return url;
+    return [NSString stringWithFormat:@"%@/live/recordingFile/%@/refmovie.mov", baseUrl, [self assetID]];
 }
 
 #pragma mark BRImageProvider

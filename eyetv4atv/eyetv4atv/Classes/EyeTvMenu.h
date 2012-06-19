@@ -14,6 +14,7 @@
     SBJsonStreamParser *parser;
     SBJsonStreamParserAdapter *adapter;
     NSArray *_items;
+    NSString *baseUrl;
 }
 
 - (id)initWithService:(NSNetService *)service;
