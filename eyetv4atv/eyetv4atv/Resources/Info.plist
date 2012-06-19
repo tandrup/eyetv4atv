@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleExecutable</key>
-	<string>helloWorld</string>
+	<string>eyetv4atv</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.apple.frontrow.appliance.helloWorld</string>
+	<string>com.apple.frontrow.appliance.eyetv4atv</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -37,7 +37,7 @@
 	<key>MinimumOSVersion</key>
 	<string>3.0</string>
 	<key>NSPrincipalClass</key>
-	<string>ATVAppliance</string>
+	<string>EyeTVAppliance</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>3</integer>

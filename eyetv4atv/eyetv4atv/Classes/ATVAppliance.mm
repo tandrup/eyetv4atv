@@ -18,7 +18,7 @@
 #import "BRMediaPlayer.h"
 #import "BRMediaPlayerManager.h"
 
-@implementation ATVAppliance
+@implementation EyeTVAppliance
 
 @synthesize topShelfController = _topShelfController;
 
@@ -62,7 +62,7 @@
     self = [super init];
     if (self) {
 		_topShelfController		= [[TopShelfController alloc] init];
-		_applianceCategories	= [[ATVAppliance applianceCategories] retain];
+		_applianceCategories	= [[EyeTVAppliance applianceCategories] retain];
     }
     
     return self;

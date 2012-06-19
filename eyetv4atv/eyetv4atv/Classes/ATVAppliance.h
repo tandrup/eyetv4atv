@@ -11,7 +11,7 @@
 
 @class TopShelfController;
 
-@interface ATVAppliance : BRBaseAppliance {
+@interface EyeTVAppliance : BRBaseAppliance {
 	TopShelfController*		_topShelfController;
 	NSArray*				_applianceCategories;
 }
