@@ -11,6 +11,7 @@
 #import "TopShelfController.h"
 #import "BRMediaPlayer.h"
 #import "BRMediaPlayerManager.h"
+#import "EyeTvMenu.h"
 
 @implementation EyeTVAppliance
 
@@ -75,6 +76,8 @@
 {
 	id controller	= nil;
 	
+    controller = [[[EyeTvMenu alloc] init] autorelease];
+
 	return controller;
 }
 

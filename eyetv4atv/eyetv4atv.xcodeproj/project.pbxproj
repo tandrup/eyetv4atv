@@ -24,7 +24,46 @@
 		5CA5B21215907B9300174E74 /* EyeTvMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B20D15907B9200174E74 /* EyeTvMenu.m */; };
 		5CA5B21315907B9300174E74 /* EyeTvVideoAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B20F15907B9200174E74 /* EyeTvVideoAsset.m */; };
 		5CA5B21415907B9300174E74 /* JsonMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B21115907B9300174E74 /* JsonMenu.m */; };
+		5CA5B238159095D300174E74 /* libsbjson-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA5B2271590953900174E74 /* libsbjson-ios.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5CA5B2221590953900174E74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CA5B21B1590953900174E74 /* SBJson.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC12323D1391D5CC00131607;
+			remoteInfo = SBJson;
+		};
+		5CA5B2241590953900174E74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CA5B21B1590953900174E74 /* SBJson.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC1232521391D5CC00131607;
+			remoteInfo = SBJsonTests;
+		};
+		5CA5B2261590953900174E74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CA5B21B1590953900174E74 /* SBJson.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCC2626913920FC7003D9994;
+			remoteInfo = "sbjson-ios";
+		};
+		5CA5B2281590953900174E74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CA5B21B1590953900174E74 /* SBJson.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCC2627313920FC7003D9994;
+			remoteInfo = "sbjson-iosTests";
+		};
+		5CA5B236159095B000174E74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CA5B21B1590953900174E74 /* SBJson.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCC2626813920FC7003D9994;
+			remoteInfo = "sbjson-ios";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		29028C7B141DA49C002053B3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +93,7 @@
 		5CA5B20F15907B9200174E74 /* EyeTvVideoAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EyeTvVideoAsset.m; sourceTree = "<group>"; };
 		5CA5B21015907B9300174E74 /* JsonMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonMenu.h; sourceTree = "<group>"; };
 		5CA5B21115907B9300174E74 /* JsonMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonMenu.m; sourceTree = "<group>"; };
+		5CA5B21B1590953900174E74 /* SBJson.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SBJson.xcodeproj; path = ../sbjson/SBJson.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CA5B238159095D300174E74 /* libsbjson-ios.a in Frameworks */,
 				29536CC5141D7D0E0044B730 /* OpenGLES.framework in Frameworks */,
 				29536CC6141D7D0E0044B730 /* QuartzCore.framework in Frameworks */,
 				29536CC2141D7CFC0044B730 /* Foundation.framework in Frameworks */,
@@ -127,6 +168,7 @@
 		29F21F7E141D7185008E187C = {
 			isa = PBXGroup;
 			children = (
+				5CA5B21B1590953900174E74 /* SBJson.xcodeproj */,
 				29536CA3141D79860044B730 /* eyetv4atv */,
 				29F21F8E141D71B8008E187C /* Frameworks */,
 				29F21F8C141D71B8008E187C /* Products */,
@@ -152,6 +194,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5CA5B21C1590953900174E74 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5CA5B2231590953900174E74 /* SBJson.framework */,
+				5CA5B2251590953900174E74 /* SBJsonTests.octest */,
+				5CA5B2271590953900174E74 /* libsbjson-ios.a */,
+				5CA5B2291590953900174E74 /* sbjson-iosTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,6 +220,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5CA5B237159095B000174E74 /* PBXTargetDependency */,
 			);
 			name = eyetv4atv;
 			productName = eyetv4atv;
@@ -191,12 +245,49 @@
 			mainGroup = 29F21F7E141D7185008E187C;
 			productRefGroup = 29F21F8C141D71B8008E187C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5CA5B21C1590953900174E74 /* Products */;
+					ProjectRef = 5CA5B21B1590953900174E74 /* SBJson.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				29536CA0141D79860044B730 /* eyetv4atv */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5CA5B2231590953900174E74 /* SBJson.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SBJson.framework;
+			remoteRef = 5CA5B2221590953900174E74 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5CA5B2251590953900174E74 /* SBJsonTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SBJsonTests.octest;
+			remoteRef = 5CA5B2241590953900174E74 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5CA5B2271590953900174E74 /* libsbjson-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libsbjson-ios.a";
+			remoteRef = 5CA5B2261590953900174E74 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5CA5B2291590953900174E74 /* sbjson-iosTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "sbjson-iosTests.octest";
+			remoteRef = 5CA5B2281590953900174E74 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		29536C9F141D79860044B730 /* Resources */ = {
@@ -247,6 +338,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5CA5B237159095B000174E74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "sbjson-ios";
+			targetProxy = 5CA5B236159095B000174E74 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		29536CC9141D7D610044B730 /* InfoPlist.strings */ = {
