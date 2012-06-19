@@ -138,12 +138,21 @@
     id obj = [dict objectForKey:@"recordings"];
     
     if ([obj isKindOfClass:[NSArray class]]) {
-        _items = [obj retain];
+        _items = obj;
     } else if (obj != nil) {
-        _items = [[NSArray arrayWithObject:obj] retain];
+        _items = [NSArray arrayWithObject:obj];
     } else {
-        _items = [[NSArray array] retain];
+        _items = [NSArray array];
     }
+    
+    _items = [[_items filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        if (evaluatedObject != nil && [evaluatedObject isKindOfClass:[NSDictionary class]]) {
+            return [evaluatedObject objectForKey:@"Reencoded Variants"] != nil;
+        }
+        return YES;
+    }]] retain];
+    
+    NSLog(@"Filtered list %@", _items);
     
     [[self list] setDatasource:self];
 }
