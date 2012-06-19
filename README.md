@@ -1,4 +1,4 @@
-eyetv4atv2 - An EyeTV integration for the Apple TV 2
+eyetv4atv - An EyeTV integration for the Apple TV 2
 =====================================
 
 Contributors
