@@ -12,7 +12,7 @@
 		29028C89141DBA59002053B3 /* CrownePlaza.png in Resources */ = {isa = PBXBuildFile; fileRef = 29028C88141DBA59002053B3 /* CrownePlaza.png */; };
 		29270D96141EDF07008CAFD4 /* InputEventController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29270D95141EDF07008CAFD4 /* InputEventController.m */; };
 		29270D99141EE67F008CAFD4 /* SampleVideoAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 29270D98141EE67F008CAFD4 /* SampleVideoAsset.m */; };
-		29536CB8141D7ADA0044B730 /* ATVAppliance.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29536CB0141D7ADA0044B730 /* ATVAppliance.mm */; };
+		29536CB8141D7ADA0044B730 /* EyeTVAppliance.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29536CB0141D7ADA0044B730 /* EyeTVAppliance.mm */; };
 		29536CB9141D7ADA0044B730 /* BRTopShelfView-ProductImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 29536CB3141D7ADA0044B730 /* BRTopShelfView-ProductImage.m */; };
 		29536CBA141D7ADA0044B730 /* HelloWorldMainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 29536CB5141D7ADA0044B730 /* HelloWorldMainMenu.m */; };
 		29536CBB141D7ADA0044B730 /* TopShelfController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29536CB7141D7ADA0044B730 /* TopShelfController.m */; };
@@ -42,10 +42,10 @@
 		29270D97141EE67F008CAFD4 /* SampleVideoAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleVideoAsset.h; sourceTree = "<group>"; };
 		29270D98141EE67F008CAFD4 /* SampleVideoAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleVideoAsset.m; sourceTree = "<group>"; };
 		29536CA1141D79860044B730 /* eyetv4atv.frappliance */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eyetv4atv.frappliance; sourceTree = BUILT_PRODUCTS_DIR; };
-		29536CA9141D79860044B730 /* helloWorld-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "helloWorld-Prefix.pch"; sourceTree = "<group>"; };
+		29536CA9141D79860044B730 /* eyetv4atv-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "eyetv4atv-Prefix.pch"; sourceTree = "<group>"; };
 		29536CAE141D7ADA0044B730 /* ApplianceConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplianceConfig.h; sourceTree = "<group>"; };
-		29536CAF141D7ADA0044B730 /* ATVAppliance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATVAppliance.h; sourceTree = "<group>"; };
-		29536CB0141D7ADA0044B730 /* ATVAppliance.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ATVAppliance.mm; sourceTree = "<group>"; };
+		29536CAF141D7ADA0044B730 /* EyeTVAppliance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EyeTVAppliance.h; sourceTree = "<group>"; };
+		29536CB0141D7ADA0044B730 /* EyeTVAppliance.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EyeTVAppliance.mm; sourceTree = "<group>"; };
 		29536CB1141D7ADA0044B730 /* BackRowExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackRowExtras.h; sourceTree = "<group>"; };
 		29536CB2141D7ADA0044B730 /* BRTopShelfView-ProductImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BRTopShelfView-ProductImage.h"; sourceTree = "<group>"; };
 		29536CB3141D7ADA0044B730 /* BRTopShelfView-ProductImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BRTopShelfView-ProductImage.m"; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				29536CC7141D7D610044B730 /* Resources */,
-				29536CA9141D79860044B730 /* helloWorld-Prefix.pch */,
+				29536CA9141D79860044B730 /* eyetv4atv-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -121,8 +121,8 @@
 				29D95EE8141EA0A300876AFA /* EAGLControl */,
 				29536CD1141D82860044B730 /* OpenGL Teapot */,
 				29536CAE141D7ADA0044B730 /* ApplianceConfig.h */,
-				29536CAF141D7ADA0044B730 /* ATVAppliance.h */,
-				29536CB0141D7ADA0044B730 /* ATVAppliance.mm */,
+				29536CAF141D7ADA0044B730 /* EyeTVAppliance.h */,
+				29536CB0141D7ADA0044B730 /* EyeTVAppliance.mm */,
 				29536CB1141D7ADA0044B730 /* BackRowExtras.h */,
 				29536CB2141D7ADA0044B730 /* BRTopShelfView-ProductImage.h */,
 				29536CB3141D7ADA0044B730 /* BRTopShelfView-ProductImage.m */,
@@ -316,7 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29536CB8141D7ADA0044B730 /* ATVAppliance.mm in Sources */,
+				29536CB8141D7ADA0044B730 /* EyeTVAppliance.mm in Sources */,
 				29536CB9141D7ADA0044B730 /* BRTopShelfView-ProductImage.m in Sources */,
 				29536CBA141D7ADA0044B730 /* HelloWorldMainMenu.m in Sources */,
 				29536CBB141D7ADA0044B730 /* TopShelfController.m in Sources */,
@@ -363,7 +363,7 @@
 				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "eyetv4atv/helloWorld-Prefix.pch";
+				GCC_PREFIX_HEADER = "eyetv4atv/eyetv4atv-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -409,7 +409,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "eyetv4atv/helloWorld-Prefix.pch";
+				GCC_PREFIX_HEADER = "eyetv4atv/eyetv4atv-Prefix.pch";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
