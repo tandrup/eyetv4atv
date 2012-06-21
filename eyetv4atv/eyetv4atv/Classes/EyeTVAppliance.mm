@@ -1,9 +1,9 @@
 //
-//  ATVAppliance.mm
-//  atvHelloWorld
+//  EyeTVAppliance.mm
+//  eyetv4atv
 //
-//  Created by Michael Gile on 8/21/11.
-//  Copyright 2011 Michael Gile. All rights reserved.
+//  Created by Mads Tandrup on 20/06/12.
+//  Copyright 2012 Mads Tandrup. All rights reserved.
 //
 
 #import "EyeTVAppliance.h"
@@ -92,13 +92,7 @@
 
 - (id) controllerForIdentifier:(id)identifier args:(id)args
 {
-	id controller	= nil;
-	
-    NSLog(@"Selected %@", [identifier addresses]);
-    NSLog(@"Selected %@", [identifier hostName]);
-    controller = [[[EyeTvMenu alloc] initWithService:identifier] autorelease];
-
-	return controller;
+    return [[[EyeTvMenu alloc] initWithService:identifier] autorelease];
 }
 
 - (id) localizedSearchTitle { 
@@ -122,11 +116,6 @@
     if ([[aNetService name] hasPrefix:@"EyeTV"]) {
         [_services addObject:aNetService];
     }
-    //[_applianceCategories addObject:[BRApplianceCategory categoryWithName:aNetService.name 
-	//												   identifier:aNetService.name 
-	//											   preferredOrder:0]];
-
-    
 }
 
 @end

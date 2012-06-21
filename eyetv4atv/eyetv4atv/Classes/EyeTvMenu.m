@@ -17,9 +17,11 @@
 
 @implementation EyeTvMenu
 
-- (id)initWithService:(NSNetService *)service {
+- (id)initWithService:(NSNetService *)aNetService {
     self = [super init];
     if (self) {
+        service = [aNetService retain];
+        
         // Initialization code here.
 		[self setListTitle:[service name]];
         self.showSpinner = YES;
@@ -58,30 +60,35 @@
     return self;
 }
 
-- (void)netServiceDidResolveAddress:(NSNetService *)aNetService {
-    NSString* addr = [aNetService hostName];
-    int port = 2170;
-    baseUrl = [[NSString stringWithFormat:@"http://%@:%d", addr, port] retain];
-    NSString* urlString = [NSString stringWithFormat:@"%@/live/recordings/0/0/-1/-1/-date/_REC_WIFIACCESS", baseUrl];
-    NSLog(@"EyeTV URL: %@", urlString);
-    
-    NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]
-                                              cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                          timeoutInterval:60.0];
-    
-    [[[NSURLConnection alloc] initWithRequest:theRequest delegate:self] autorelease];
-}
-
--(void)netService:(NSNetService *)sender didNotResolve:(NSDictionary *)errorDict {
-    NSLog(@"ERROR: Unable to resolve address for %@. Error is %@", sender, errorDict);
-}
-
 -(void)dealloc {
     [_items release];
     [baseUrl release];
     [parser release];
     [adapter release];
+    [service release];
 	[super dealloc];
+}
+
+- (void)loadRecordings {
+    NSString* urlString = [NSString stringWithFormat:@"%@/live/recordings/0/0/-1/-1/-date/_REC_WIFIACCESS", baseUrl];
+    NSLog(@"EyeTV URL: %@", urlString);
+    
+    NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]
+                                                cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                            timeoutInterval:60.0];
+    
+    [[[NSURLConnection alloc] initWithRequest:theRequest delegate:self] autorelease];    
+}
+
+- (void)netServiceDidResolveAddress:(NSNetService *)aNetService {
+    NSString* addr = [aNetService hostName];
+    int port = 2170;
+    baseUrl = [[NSString stringWithFormat:@"http://%@:%d", addr, port] retain];
+    [self loadRecordings];
+}
+
+-(void)netService:(NSNetService *)sender didNotResolve:(NSDictionary *)errorDict {
+    NSLog(@"ERROR: Unable to resolve address for %@. Error is %@", sender, errorDict);
 }
 
 - (EyeTvVideoAsset*)assetFor:(long)itemIndex {
@@ -152,8 +159,6 @@
         return YES;
     }]] retain];
     
-    NSLog(@"Filtered list %@", _items);
-    
     [[self list] setDatasource:self];
 }
 
@@ -193,18 +198,40 @@
 	return YES;
 }
 
+#pragma mark TextFieldDelegate methods
+
+- (void)textDidEndEditing:(id)textField {
+    NSLog(@"%s %@", __PRETTY_FUNCTION__, [textField stringValue]);
+    
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    
+    [defaults setValue:[textField stringValue] forKey:[service name]];
+    
+    [self loadRecordings];
+    
+    [[self stack] popController];
+}
+
 #pragma mark NSURLConnectionDelegate methods
 
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
 	NSLog(@"Connection didReceiveAuthenticationChallenge: %@", challenge);
-    
-	NSURLCredential *credential = [NSURLCredential credentialWithUser:@"eyetv"
-															 password:@"1309"
-														  persistence:NSURLCredentialPersistenceForSession];
-    
-	[[challenge sender] useCredential:credential forAuthenticationChallenge:challenge];
-}
 
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSString *password = [defaults stringForKey:[service name]];
+    if (password != nil) {
+        NSURLCredential *credential = [NSURLCredential credentialWithUser:@"eyetv"
+                                                                 password:password
+                                                              persistence:NSURLCredentialPersistenceForSession];
+        [[challenge sender] useCredential:credential forAuthenticationChallenge:challenge];
+    } else {
+        BRTextEntryController* textEntry = [[BRTextEntryController alloc] init];
+        [textEntry setTitle:@"Please enter EyeTV password"];
+        [textEntry setTextFieldDelegate:self];
+        [[challenge sender] cancelAuthenticationChallenge:challenge];
+        [[self stack] pushController:textEntry];
+    }
+}
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
 	NSLog(@"Connection didReceiveResponse: %@ - %@", response, [response MIMEType]);
