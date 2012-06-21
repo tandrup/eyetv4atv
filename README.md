@@ -13,8 +13,8 @@ How to install eyetv4atv
 - a EyeTV menu should now appear on the main menu launcher
 
 AppleTV2 default login: 
-username: root
-password: alpine
+- username: root
+- password: alpine
 
 Contributors
 ------------
