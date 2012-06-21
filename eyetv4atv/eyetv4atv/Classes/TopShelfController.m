@@ -33,7 +33,7 @@
 - (BRTopShelfView *)topShelfView { 	
 	BRTopShelfView* topShelf		= [[BRTopShelfView alloc] init];
 	BRImageControl* imageControl	= [topShelf productImage];
-	BRImage* theImage				= [BRImage imageWithPath:[[NSBundle bundleForClass:[TopShelfController class]] pathForResource:@"360iDevBanner" ofType:@"png"]];
+	BRImage* theImage				= [BRImage imageWithPath:[[NSBundle bundleForClass:[TopShelfController class]] pathForResource:@"eyetv" ofType:@"png"]];
 	//BRImage *theImage = [[BRThemeInfo sharedTheme] appleTVIconOOB];
 	[imageControl setImage:theImage];
 	

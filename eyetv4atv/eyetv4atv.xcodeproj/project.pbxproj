@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		29028C7C141DA49C002053B3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29028C7B141DA49C002053B3 /* Info.plist */; };
-		29028C85141DB7E5002053B3 /* schedule.png in Resources */ = {isa = PBXBuildFile; fileRef = 29028C84141DB7E5002053B3 /* schedule.png */; };
-		29028C89141DBA59002053B3 /* CrownePlaza.png in Resources */ = {isa = PBXBuildFile; fileRef = 29028C88141DBA59002053B3 /* CrownePlaza.png */; };
 		29536CB8141D7ADA0044B730 /* EyeTVAppliance.mm in Sources */ = {isa = PBXBuildFile; fileRef = 29536CB0141D7ADA0044B730 /* EyeTVAppliance.mm */; };
 		29536CB9141D7ADA0044B730 /* BRTopShelfView-ProductImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 29536CB3141D7ADA0044B730 /* BRTopShelfView-ProductImage.m */; };
 		29536CBB141D7ADA0044B730 /* TopShelfController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29536CB7141D7ADA0044B730 /* TopShelfController.m */; };
@@ -18,9 +16,9 @@
 		29536CC5141D7D0E0044B730 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29536CC3141D7D0E0044B730 /* OpenGLES.framework */; };
 		29536CC6141D7D0E0044B730 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29536CC4141D7D0E0044B730 /* QuartzCore.framework */; };
 		29536CCC141D7D610044B730 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29536CC9141D7D610044B730 /* InfoPlist.strings */; };
-		29536CCE141D7DE40044B730 /* Teapot.png in Resources */ = {isa = PBXBuildFile; fileRef = 29536CCD141D7DE40044B730 /* Teapot.png */; };
 		29AFDC8A141FEFE400770D4B /* template.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 29AFDC86141FEE5600770D4B /* template.fsh */; };
 		29AFDC8B141FEFE400770D4B /* template.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 29AFDC87141FEE5600770D4B /* template.vsh */; };
+		5C25493C15934268000AE5CF /* eyetv.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C25493B15934268000AE5CF /* eyetv.png */; };
 		5CA5B21215907B9300174E74 /* EyeTvMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B20D15907B9200174E74 /* EyeTvMenu.m */; };
 		5CA5B21315907B9300174E74 /* EyeTvVideoAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B20F15907B9200174E74 /* EyeTvVideoAsset.m */; };
 		5CA5B238159095D300174E74 /* libsbjson-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA5B2271590953900174E74 /* libsbjson-ios.a */; };
@@ -66,8 +64,6 @@
 
 /* Begin PBXFileReference section */
 		29028C7B141DA49C002053B3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		29028C84141DB7E5002053B3 /* schedule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schedule.png; sourceTree = "<group>"; };
-		29028C88141DBA59002053B3 /* CrownePlaza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CrownePlaza.png; sourceTree = "<group>"; };
 		29536CA1141D79860044B730 /* eyetv4atv.frappliance */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eyetv4atv.frappliance; sourceTree = BUILT_PRODUCTS_DIR; };
 		29536CA9141D79860044B730 /* eyetv4atv-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "eyetv4atv-Prefix.pch"; sourceTree = "<group>"; };
 		29536CAE141D7ADA0044B730 /* ApplianceConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplianceConfig.h; sourceTree = "<group>"; };
@@ -83,9 +79,9 @@
 		29536CC3141D7D0E0044B730 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 		29536CC4141D7D0E0044B730 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		29536CCA141D7D610044B730 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		29536CCD141D7DE40044B730 /* Teapot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Teapot.png; sourceTree = "<group>"; };
 		29AFDC86141FEE5600770D4B /* template.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = template.fsh; sourceTree = "<group>"; };
 		29AFDC87141FEE5600770D4B /* template.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = template.vsh; sourceTree = "<group>"; };
+		5C25493B15934268000AE5CF /* eyetv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyetv.png; sourceTree = "<group>"; };
 		5CA5B20C15907B9200174E74 /* EyeTvMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EyeTvMenu.h; sourceTree = "<group>"; };
 		5CA5B20D15907B9200174E74 /* EyeTvMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EyeTvMenu.m; sourceTree = "<group>"; };
 		5CA5B20E15907B9200174E74 /* EyeTvVideoAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EyeTvVideoAsset.h; sourceTree = "<group>"; };
@@ -149,10 +145,8 @@
 		29536CC7141D7D610044B730 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5C25493B15934268000AE5CF /* eyetv.png */,
 				29028C7B141DA49C002053B3 /* Info.plist */,
-				29536CCD141D7DE40044B730 /* Teapot.png */,
-				29028C88141DBA59002053B3 /* CrownePlaza.png */,
-				29028C84141DB7E5002053B3 /* schedule.png */,
 				29536CC9141D7D610044B730 /* InfoPlist.strings */,
 				29AFDC86141FEE5600770D4B /* template.fsh */,
 				29AFDC87141FEE5600770D4B /* template.vsh */,
@@ -292,10 +286,8 @@
 				29AFDC8A141FEFE400770D4B /* template.fsh in Resources */,
 				29AFDC8B141FEFE400770D4B /* template.vsh in Resources */,
 				29536CCC141D7D610044B730 /* InfoPlist.strings in Resources */,
-				29536CCE141D7DE40044B730 /* Teapot.png in Resources */,
 				29028C7C141DA49C002053B3 /* Info.plist in Resources */,
-				29028C85141DB7E5002053B3 /* schedule.png in Resources */,
-				29028C89141DBA59002053B3 /* CrownePlaza.png in Resources */,
+				5C25493C15934268000AE5CF /* eyetv.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
