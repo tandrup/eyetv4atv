@@ -6,7 +6,7 @@ This adds an EyeTV menu to the Apple TV and allows to watch recordings on the Ap
 How to install eyetv4atv
 ---------------------------
 
-- download the binary archive eyetv4atv.frappliance.tar.gz
+- download the binary archive [eyetv4atv.frappliance.tar.gz](https://github.com/downloads/tandrup/eyetv4atv/eyetv4atv.frappliance.tar.gz)
 - extract the archive, and copy the eyetv4atv.frappliance folder and contents to the following folder on the AppleTV
 /Applications/AppleTV.app/Appliances folder
 - restart the Apple TV
