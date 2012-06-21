@@ -1,10 +1,27 @@
 eyetv4atv - An EyeTV integration for the Apple TV 2
 =====================================
 
+This adds an EyeTV menu to the Apple TV and allows to watch recordings on the Apple TV.
+
+How to install eyetv4atv
+---------------------------
+
+- download the binary archive eyetv4atv.frappliance.tar.gz
+- extract the archive, and copy the eyetv4atv.frappliance folder and contents to the following folder on the AppleTV
+/Applications/AppleTV.app/Appliances folder
+- restart the Apple TV
+- a EyeTV menu should now appear on the main menu launcher
+
+AppleTV2 default login: 
+username: root
+password: alpine
+
 Contributors
 ------------
 
-The project was based on atvHelloWorld written by [Michael Gile](http://mgile.com) ([@mgile](http://twitter.com/mgile)).
+eyetv4atv was written by Mads Tandrup.
+
+The project was based on atvHelloWorld example written by [Michael Gile](http://mgile.com) ([@mgile](http://twitter.com/mgile)).
 
 atvHelloWorld License
 -------
