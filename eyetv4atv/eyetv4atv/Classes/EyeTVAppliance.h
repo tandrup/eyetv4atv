@@ -1,9 +1,9 @@
 //
-//  ATVAppliance.h
-//  atvHelloWorld
+//  EyeTVAppliance.h
+//  eyetv4atv
 //
-//  Created by Michael Gile on 8/21/11.
-//  Copyright 2011 Michael Gile All rights reserved.
+//  Created by Mads Tandrup on 8/21/11.
+//  Copyright 2012 Mads Tandrup. All rights reserved.
 //
 
 #import "BackRowExtras.h"

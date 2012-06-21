@@ -1,9 +1,9 @@
 //
 //  EyeTvVideoAsset.m
-//  viaplay
+//  eyetv4atv
 //
 //  Created by Mads Tandrup on 28/01/12.
-//  Copyright 2012 Wayin Inc. All rights reserved.
+//  Copyright 2012 Mads Tandrup. All rights reserved.
 //
 
 #import "EyeTvVideoAsset.h"
