@@ -19,6 +19,7 @@
 		29AFDC8A141FEFE400770D4B /* template.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 29AFDC86141FEE5600770D4B /* template.fsh */; };
 		29AFDC8B141FEFE400770D4B /* template.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 29AFDC87141FEE5600770D4B /* template.vsh */; };
 		5C25493C15934268000AE5CF /* eyetv.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C25493B15934268000AE5CF /* eyetv.png */; };
+		5C59161F15AF382900805127 /* EyeTvInstanceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C59161E15AF382900805127 /* EyeTvInstanceManager.m */; };
 		5CA5B21215907B9300174E74 /* EyeTvMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B20D15907B9200174E74 /* EyeTvMenu.m */; };
 		5CA5B21315907B9300174E74 /* EyeTvVideoAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B20F15907B9200174E74 /* EyeTvVideoAsset.m */; };
 		5CA5B238159095D300174E74 /* libsbjson-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA5B2271590953900174E74 /* libsbjson-ios.a */; };
@@ -82,6 +83,8 @@
 		29AFDC86141FEE5600770D4B /* template.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = template.fsh; sourceTree = "<group>"; };
 		29AFDC87141FEE5600770D4B /* template.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = template.vsh; sourceTree = "<group>"; };
 		5C25493B15934268000AE5CF /* eyetv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyetv.png; sourceTree = "<group>"; };
+		5C59161D15AF382900805127 /* EyeTvInstanceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EyeTvInstanceManager.h; sourceTree = "<group>"; };
+		5C59161E15AF382900805127 /* EyeTvInstanceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EyeTvInstanceManager.m; sourceTree = "<group>"; };
 		5CA5B20C15907B9200174E74 /* EyeTvMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EyeTvMenu.h; sourceTree = "<group>"; };
 		5CA5B20D15907B9200174E74 /* EyeTvMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EyeTvMenu.m; sourceTree = "<group>"; };
 		5CA5B20E15907B9200174E74 /* EyeTvVideoAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EyeTvVideoAsset.h; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				29536CB3141D7ADA0044B730 /* BRTopShelfView-ProductImage.m */,
 				29536CB6141D7ADA0044B730 /* TopShelfController.h */,
 				29536CB7141D7ADA0044B730 /* TopShelfController.m */,
+				5C59161D15AF382900805127 /* EyeTvInstanceManager.h */,
+				5C59161E15AF382900805127 /* EyeTvInstanceManager.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 				29536CBB141D7ADA0044B730 /* TopShelfController.m in Sources */,
 				5CA5B21215907B9300174E74 /* EyeTvMenu.m in Sources */,
 				5CA5B21315907B9300174E74 /* EyeTvVideoAsset.m in Sources */,
+				5C59161F15AF382900805127 /* EyeTvInstanceManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

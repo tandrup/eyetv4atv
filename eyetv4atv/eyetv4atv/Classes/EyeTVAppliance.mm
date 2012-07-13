@@ -17,46 +17,36 @@
 
 @synthesize topShelfController = _topShelfController;
 
-+ (NSArray*) applianceCategories {
-	
-	NSMutableArray* categoryList = [[NSMutableArray alloc] initWithCapacity:5];
-	
-	[categoryList addObject:[BRApplianceCategory categoryWithName:@"EyeTV" 
-													   identifier:@"EyeTV" 
-												   preferredOrder:0]];
-	
-	return [NSArray arrayWithArray:[categoryList autorelease]];
-}
+static EyeTvInstanceManager* _instanceManager;
 
-
-+ (void) initialize {
-	;
++ (void)initialize
+{
+    static BOOL initialized = NO;
+    if(!initialized)
+    {
+        initialized = YES;
+        _instanceManager = [[EyeTvInstanceManager alloc] init];
+    }
 }
 
 - (id)init {
     self = [super init];
     if (self) {
-        _services               = [[NSMutableSet set] retain];
-        _serviceBrowser         = [[NSNetServiceBrowser alloc] init];
-        [_serviceBrowser setDelegate:self];
-        [_serviceBrowser searchForServicesOfType:@"_http._tcp" inDomain:@""];
+        [_instanceManager setDelegate:self];
 		_topShelfController		= [[TopShelfController alloc] init];
-		_applianceCategories	= [[EyeTVAppliance applianceCategories] retain];
-        
+        NSLog(@"EyeTVAppliance initialized");
     }
     
     return self;
 }
 
 - (void) dealloc {
-    [_serviceBrowser release];
-    [_services release];
-	[_applianceCategories release];
 	[_topShelfController release];
 	[super dealloc];
 }
 
 - (id) applianceCategories {
+    NSSet* _services = [_instanceManager services];
     NSMutableArray* categoryList = [[NSMutableArray alloc] initWithCapacity:[_services count]];
 	
     int idx = 0;
@@ -65,10 +55,10 @@
                                                            identifier:service
                                                        preferredOrder:idx++]];
     }
-	
-	return [NSArray arrayWithArray:[categoryList autorelease]];
 
-	//return _applianceCategories;
+    NSLog(@"applianceCategories %d", idx);
+
+	return [NSArray arrayWithArray:[categoryList autorelease]];
 }
 
 - (id) identifierForContentAlias:(id)contentAlias {
@@ -111,11 +101,15 @@
 	return APPLIANCE_KEY; 
 }
 
-- (void)netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didFindService:(NSNetService *)aNetService moreComing:(BOOL)moreComing {
-    NSLog(@"Found service: %@", [aNetService name]);
-    if ([[aNetService name] hasPrefix:@"EyeTV"]) {
-        [_services addObject:aNetService];
-    }
+- (id) applianceInfo {
+    NSLog(@"applianceInfo");
+    BRApplianceInfo* appInfo = [[BRApplianceInfo alloc] init];
+    appInfo.isRemoteAppliance = YES;
+    return appInfo;
+}
+
+- (void)servicesChanged {
+    [self reloadCategories];
 }
 
 @end

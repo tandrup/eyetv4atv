@@ -8,18 +8,16 @@
 
 #import "BackRowExtras.h"
 #import "BackRow.h"
+#import "EyeTvInstanceManager.h"
 
 @class TopShelfController;
 
-@interface EyeTVAppliance : BRBaseAppliance <NSNetServiceBrowserDelegate> {
+@interface EyeTVAppliance : BRBaseAppliance <EyeTvInstanceManagerDelegate> {
 	TopShelfController*		_topShelfController;
-	NSArray*				_applianceCategories;
-    NSNetServiceBrowser*    _serviceBrowser;
-    NSMutableSet*           _services;
 }
 
 @property(nonatomic, readonly, retain) id topShelfController;
 
-+ (NSArray*) applianceCategories;
+- (NSArray*) applianceCategories;
 
 @end
