@@ -23,6 +23,7 @@
 		5CA5B21215907B9300174E74 /* EyeTvMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B20D15907B9200174E74 /* EyeTvMenu.m */; };
 		5CA5B21315907B9300174E74 /* EyeTvVideoAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA5B20F15907B9200174E74 /* EyeTvVideoAsset.m */; };
 		5CA5B238159095D300174E74 /* libsbjson-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA5B2271590953900174E74 /* libsbjson-ios.a */; };
+		873130061693287900B10DB0 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 873130051693287900B10DB0 /* AppIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		5CA5B20E15907B9200174E74 /* EyeTvVideoAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EyeTvVideoAsset.h; sourceTree = "<group>"; };
 		5CA5B20F15907B9200174E74 /* EyeTvVideoAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EyeTvVideoAsset.m; sourceTree = "<group>"; };
 		5CA5B21B1590953900174E74 /* SBJson.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SBJson.xcodeproj; path = ../sbjson/SBJson.xcodeproj; sourceTree = "<group>"; };
+		873130051693287900B10DB0 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		29536CC7141D7D610044B730 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				873130051693287900B10DB0 /* AppIcon.png */,
 				5C25493B15934268000AE5CF /* eyetv.png */,
 				29028C7B141DA49C002053B3 /* Info.plist */,
 				29536CC9141D7D610044B730 /* InfoPlist.strings */,
@@ -293,6 +296,7 @@
 				29536CCC141D7D610044B730 /* InfoPlist.strings in Resources */,
 				29028C7C141DA49C002053B3 /* Info.plist in Resources */,
 				5C25493C15934268000AE5CF /* eyetv.png in Resources */,
+				873130061693287900B10DB0 /* AppIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
